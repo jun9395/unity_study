@@ -23,6 +23,17 @@ public class Movement2D : MonoBehaviour
         moveDirection = new Vector3(x, y, 0);
 
         // 새로운 위치
-        transform.position += moveDirection * moveSpeed * Time.deltaTime;
+        // transform.position += moveDirection * moveSpeed * Time.deltaTime;
+
+        // velocity는 방향과 속력을 나타내는 속도 변수
+        // 속도를 설정하면 RigidBody 내부에 있는 이동 함수를 해당 속도로 실행
+        rigid2D.velocity = new Vector3(x, y, 0) * moveSpeed;
+    }
+
+    private Rigidbody2D rigid2D;
+
+    private void Awake()
+    {
+        rigid2D = GetComponent<Rigidbody2D>();
     }
 }
