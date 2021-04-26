@@ -12,6 +12,7 @@ public class Movement3D : MonoBehaviour
 
     private void Start()
     {
+        // 오브젝트에 부착된 NavMeshAgent 컴포넌트를 가져온다
         navMeshAgent = GetComponent<NavMeshAgent>();
     }
 
